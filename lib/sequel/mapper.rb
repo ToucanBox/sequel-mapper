@@ -94,7 +94,7 @@ module Sequel
     end
 
     def pk_with_table
-      "#{dataset.first_source_table}__#{primary_key}".to_sym
+      Sequel[dataset.first_source_table][primary_key]
     end
 
     def scope(dataset)
